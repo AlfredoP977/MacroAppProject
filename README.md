@@ -36,3 +36,18 @@ setting up array for the users stats goals name and such.
 
 -2/1/26 45min
 added more modals, worked on linkbar. working on the macro over view.
+
+-2/3/26 1hr
+more macro overview stuff
+adding links got to check react issues may have installed it wrong
+planing on using the USDA api no login required may be esier.
+
+-2/4/2026
+fixing react errors andtesting different sections
+
+-2/5/2026
+-working on search funtion to find food in the usda database and then a helper function will just grab protein, carb , fiber, fat , and sugar. then comvert it into grams.
+-2/6/2026 30min
+-setting up back end installed npm cors express mongoose celebrate gitignore
+
+-
