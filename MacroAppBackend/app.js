@@ -4,7 +4,66 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+// celebrate
+const { errors } = require("celebrate");
+//  main hub to connect all routes
+const mainRouter = require("./routes");
+
+const { login, createUser } = require("./controllers/users");
+// validate
+const {
+  validateUserLogin,
+  validateUserCreation,
+} = require("./middlewares/validation");
+
+// errorHandler
+const { errorHandler } = require("./middlewares/errors/IndexErrors");
+
+const { requestLogger, errorLogger } = require("./middlewares/logger");
+
+//  using express
 const app = express();
+
+// Enable cross-origin resource sharing for client-server communication
+app.use(cors());
+
+//  choosing default port out of 65,535
+const { PORT = 3001 } = process.env;
+
+app.use(express.json());
+app.use(requestLogger);
+
+app.get("/crash-test", () => {
+  setTimeout(() => {
+    throw new Error("Server will crash now");
+  }, 0);
+});
+
+app.post("/signin", validateUserLogin, login);
+app.post("/signup", validateUserCreation, createUser);
+
+//  utilizing authentification
+
+//  connecting project to data base
+mongoose
+  .connect("mongodb://127.0.0.1:27017/wtwr_db")
+  .then(() => {
+    console.log("connected to DB");
+  })
+  .catch(console.error);
+//  connecting app to main router at rout.js
+app.use("/", mainRouter);
+
+app.use(errorLogger); // enabling the error logger
+
+app.use(errors());
+
+app.use(errorHandler);
+
+//  checking what port is being used
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Listening on port ${PORT}`);
+});
 
 app.get("/", (req, res) => {
   res.send("API is running");

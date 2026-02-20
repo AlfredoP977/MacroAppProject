@@ -50,4 +50,9 @@ fixing react errors andtesting different sections
 -2/6/2026 30min
 -setting up back end installed npm cors express mongoose celebrate gitignore
 
--
+-2/7/2026 1 hour
+added controllers middlewares models routes utils
+now writing code for the files within
+
+-2/20/2026 1 hour
+connecting files together still working on it.
