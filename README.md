@@ -56,3 +56,6 @@ now writing code for the files within
 
 -2/20/2026 1 hour
 connecting files together still working on it.
+
+-2/22/2026 1 hour
+still connecting files and making components
