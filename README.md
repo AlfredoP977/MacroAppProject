@@ -59,3 +59,6 @@ connecting files together still working on it.
 
 -2/22/2026 1 hour
 still connecting files and making components
+
+-2/27/26 1 hour
+calorie tracker,calorie progression, macro breakdown
