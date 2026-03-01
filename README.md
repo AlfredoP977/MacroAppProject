@@ -62,3 +62,5 @@ still connecting files and making components
 
 -2/27/26 1 hour
 calorie tracker,calorie progression, macro breakdown
+-3/1 30min
+messing with array in calorie counter.
